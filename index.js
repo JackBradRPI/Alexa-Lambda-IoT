@@ -16,7 +16,7 @@ var APP_ID = "amzn1.ask.skill.f3f60fe4-7a0d-43d2-a2a9-7edbee4d4634";
 /*****/
 //Environment Configuration
 var config = {};
-config.IOT_BROKER_ENDPOINT      = "https://a1s2v90kik0rsl.iot.eu-west-1.amazonaws.com".toLowerCase();
+config.IOT_BROKER_ENDPOINT      = "https://a1s2v90kik0rsl.iot.eu-west-1.amazonaws.com"
 config.IOT_BROKER_REGION        = "eu-west-1";
 config.IOT_THING_NAME           = "RaspberryPi";
 //Loading AWS SDK libraries
@@ -59,15 +59,13 @@ HelloWorld.prototype.intentHandlers = {
     "SkyPower": function (intent, session, response) {
         //response.tellWithCard("Hello World!", "Hello World", "Hello World!");
         console.log("FB started");
-        /****/
         var repromptText = null;
         var sessionAttributes = {};
         var shouldEndSession = true;
         var speechOutput = "";
         var payloadObj=0; //On
-        //Prepare the parameters of the update call
         var paramsUpdate = {
-            topic:"/RaspberryPi",
+            topic:"RaspberryPi",
             payload: JSON.stringify(payloadObj),
             qos:0
         };
@@ -93,7 +91,7 @@ HelloWorld.prototype.intentHandlers = {
         var payloadObj=1; //On
         //Prepare the parameters of the update call
         var paramsUpdate = {
-            topic:"/RaspberryPi",
+            topic:"RaspberryPi",
             payload: JSON.stringify(payloadObj),
             qos:0
         };
