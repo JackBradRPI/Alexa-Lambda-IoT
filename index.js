@@ -16,7 +16,7 @@ var APP_ID = undefined; //replace with "amzn1.echo-sdk-ams.app.[your-unique-valu
 /*****/
 //Environment Configuration
 var config = {};
-config.IOT_BROKER_ENDPOINT      = "a1s2v90kik0rsl.iot.eu-west-1.amazonaws.com".toLowerCase();
+config.IOT_BROKER_ENDPOINT      = "https://a1s2v90kik0rsl.iot.eu-west-1.amazonaws.com".toLowerCase();
 config.IOT_BROKER_REGION        = "eu-west-1";
 config.IOT_THING_NAME           = "RaspberryPi";
 //Loading AWS SDK libraries
@@ -77,7 +77,7 @@ HelloWorld.prototype.intentHandlers = {
             console.log("MQTT Error" + data);
           }
           else {
-            speechOutput = "Hi Jack";
+            speechOutput = "Powering now";
             console.log(data);
             response.tell(speechOutput);
             //callback(sessionAttributes,buildSpeechletResponse(intent.name, speechOutput, repromptText, shouldEndSession));
@@ -103,7 +103,7 @@ HelloWorld.prototype.intentHandlers = {
             console.log("MQTT Error" + data);
           }
           else {
-            speechOutput = "Hello Georgia";
+            speechOutput = "Pausing Now";
             console.log(data);
             response.tell(speechOutput);
             //callback(sessionAttributes,buildSpeechletResponse(intent.name, speechOutput, repromptText, shouldEndSession));
